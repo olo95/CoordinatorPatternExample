@@ -6,4 +6,11 @@
 //  Copyright © 2018 Alexander Stolar. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIResponder {
+    
+    static var typeName: String {
+        return String(describing: self)
+    }
+}

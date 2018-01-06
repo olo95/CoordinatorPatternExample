@@ -10,12 +10,14 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
+    
+    var initCoordinator: InitialCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initCoordinator = InitialCoordinator(parent: nil)
+        initCoordinator.start()
+        
         return true
     }
 
