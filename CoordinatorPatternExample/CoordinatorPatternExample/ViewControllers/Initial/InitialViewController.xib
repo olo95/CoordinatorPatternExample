@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vcu-Di-d4X">
+                    <rect key="frame" x="0.0" y="166.5" width="375" height="333.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSe-nZ-YJ1">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="333.5"/>
+                            <state key="normal" title="A"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzZ-pX-PNo">
+                            <rect key="frame" x="125" y="0.0" width="125" height="333.5"/>
+                            <state key="normal" title="B"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2j-N8-XVA">
+                            <rect key="frame" x="250" y="0.0" width="125" height="333.5"/>
+                            <state key="normal" title="C"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vcu-Di-d4X" secondAttribute="trailing" id="DhO-l1-WzH"/>
+                <constraint firstItem="vcu-Di-d4X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ecu-b2-4fm"/>
+                <constraint firstItem="vcu-Di-d4X" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ep2-mf-Zn4"/>
+                <constraint firstItem="vcu-Di-d4X" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:2" id="fc0-UR-iwy"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

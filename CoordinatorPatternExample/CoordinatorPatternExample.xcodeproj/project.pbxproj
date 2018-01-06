@@ -16,6 +16,24 @@
 		D6166C8320015C25006024AD /* InitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C8220015C25006024AD /* InitialCoordinator.swift */; };
 		D6166C852001639C006024AD /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C842001639C006024AD /* InitialViewModel.swift */; };
 		D6166C882001648F006024AD /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C872001648F006024AD /* UIResponder+Extension.swift */; };
+		D6166C8C20016FBE006024AD /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C8A20016FBE006024AD /* DrawerViewController.swift */; };
+		D6166C8D20016FBE006024AD /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6166C8B20016FBE006024AD /* DrawerViewController.xib */; };
+		D6166C8F20016FD5006024AD /* DrawerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C8E20016FD5006024AD /* DrawerViewModel.swift */; };
+		D6166C9120017232006024AD /* DrawerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C9020017232006024AD /* DrawerCoordinator.swift */; };
+		D6166C942001759D006024AD /* DrawerTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C932001759D006024AD /* DrawerTransitionManager.swift */; };
+		D6166C96200184C1006024AD /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C95200184C1006024AD /* TransitionManager.swift */; };
+		D6166C98200185EF006024AD /* ACoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C97200185EF006024AD /* ACoordinator.swift */; };
+		D6166C9A200185F9006024AD /* BCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C99200185F9006024AD /* BCoordinator.swift */; };
+		D6166C9C20018605006024AD /* CCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166C9B20018605006024AD /* CCoordinator.swift */; };
+		D6166CA220018673006024AD /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166CA020018673006024AD /* AViewController.swift */; };
+		D6166CA320018673006024AD /* AViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6166CA120018673006024AD /* AViewController.xib */; };
+		D6166CA620018683006024AD /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166CA420018683006024AD /* BViewController.swift */; };
+		D6166CA720018683006024AD /* BViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6166CA520018683006024AD /* BViewController.xib */; };
+		D6166CAA2001869A006024AD /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166CA82001869A006024AD /* CViewController.swift */; };
+		D6166CAB2001869A006024AD /* CViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6166CA92001869A006024AD /* CViewController.xib */; };
+		D6166CAD200186CC006024AD /* CViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166CAC200186CC006024AD /* CViewModel.swift */; };
+		D6166CAF200186E0006024AD /* BViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166CAE200186E0006024AD /* BViewModel.swift */; };
+		D6166CB1200186ED006024AD /* AViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6166CB0200186ED006024AD /* AViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +48,24 @@
 		D6166C8220015C25006024AD /* InitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCoordinator.swift; sourceTree = "<group>"; };
 		D6166C842001639C006024AD /* InitialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModel.swift; sourceTree = "<group>"; };
 		D6166C872001648F006024AD /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
+		D6166C8A20016FBE006024AD /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		D6166C8B20016FBE006024AD /* DrawerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerViewController.xib; sourceTree = "<group>"; };
+		D6166C8E20016FD5006024AD /* DrawerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewModel.swift; sourceTree = "<group>"; };
+		D6166C9020017232006024AD /* DrawerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCoordinator.swift; sourceTree = "<group>"; };
+		D6166C932001759D006024AD /* DrawerTransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerTransitionManager.swift; sourceTree = "<group>"; };
+		D6166C95200184C1006024AD /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		D6166C97200185EF006024AD /* ACoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACoordinator.swift; sourceTree = "<group>"; };
+		D6166C99200185F9006024AD /* BCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCoordinator.swift; sourceTree = "<group>"; };
+		D6166C9B20018605006024AD /* CCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCoordinator.swift; sourceTree = "<group>"; };
+		D6166CA020018673006024AD /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
+		D6166CA120018673006024AD /* AViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AViewController.xib; sourceTree = "<group>"; };
+		D6166CA420018683006024AD /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		D6166CA520018683006024AD /* BViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BViewController.xib; sourceTree = "<group>"; };
+		D6166CA82001869A006024AD /* CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
+		D6166CA92001869A006024AD /* CViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CViewController.xib; sourceTree = "<group>"; };
+		D6166CAC200186CC006024AD /* CViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewModel.swift; sourceTree = "<group>"; };
+		D6166CAE200186E0006024AD /* BViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewModel.swift; sourceTree = "<group>"; };
+		D6166CB0200186ED006024AD /* AViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +105,7 @@
 				D6166C8120015023006024AD /* Resources */,
 				D6166C7820013D06006024AD /* ViewControllers */,
 				D6166C7720013CFA006024AD /* Coordinators */,
+				D6166C922001756D006024AD /* Managers */,
 			);
 			path = CoordinatorPatternExample;
 			sourceTree = "<group>";
@@ -78,6 +115,10 @@
 			children = (
 				D6166C7920013EC4006024AD /* Coordinating.swift */,
 				D6166C8220015C25006024AD /* InitialCoordinator.swift */,
+				D6166C9020017232006024AD /* DrawerCoordinator.swift */,
+				D6166C97200185EF006024AD /* ACoordinator.swift */,
+				D6166C99200185F9006024AD /* BCoordinator.swift */,
+				D6166C9B20018605006024AD /* CCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -85,6 +126,10 @@
 		D6166C7820013D06006024AD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6166C9F20018652006024AD /* C */,
+				D6166C9E2001864E006024AD /* B */,
+				D6166C9D20018643006024AD /* A */,
+				D6166C8920016FA1006024AD /* Drawer */,
 				D6166C7F20014FEE006024AD /* Initial */,
 			);
 			path = ViewControllers;
@@ -114,6 +159,55 @@
 				D6166C872001648F006024AD /* UIResponder+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D6166C8920016FA1006024AD /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				D6166C8A20016FBE006024AD /* DrawerViewController.swift */,
+				D6166C8E20016FD5006024AD /* DrawerViewModel.swift */,
+				D6166C8B20016FBE006024AD /* DrawerViewController.xib */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		D6166C922001756D006024AD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D6166C932001759D006024AD /* DrawerTransitionManager.swift */,
+				D6166C95200184C1006024AD /* TransitionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D6166C9D20018643006024AD /* A */ = {
+			isa = PBXGroup;
+			children = (
+				D6166CA020018673006024AD /* AViewController.swift */,
+				D6166CB0200186ED006024AD /* AViewModel.swift */,
+				D6166CA120018673006024AD /* AViewController.xib */,
+			);
+			path = A;
+			sourceTree = "<group>";
+		};
+		D6166C9E2001864E006024AD /* B */ = {
+			isa = PBXGroup;
+			children = (
+				D6166CA420018683006024AD /* BViewController.swift */,
+				D6166CAE200186E0006024AD /* BViewModel.swift */,
+				D6166CA520018683006024AD /* BViewController.xib */,
+			);
+			path = B;
+			sourceTree = "<group>";
+		};
+		D6166C9F20018652006024AD /* C */ = {
+			isa = PBXGroup;
+			children = (
+				D6166CA82001869A006024AD /* CViewController.swift */,
+				D6166CAC200186CC006024AD /* CViewModel.swift */,
+				D6166CA92001869A006024AD /* CViewController.xib */,
+			);
+			path = C;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +269,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6166CA320018673006024AD /* AViewController.xib in Resources */,
 				D6166C7020013B25006024AD /* LaunchScreen.storyboard in Resources */,
+				D6166C8D20016FBE006024AD /* DrawerViewController.xib in Resources */,
+				D6166CA720018683006024AD /* BViewController.xib in Resources */,
 				D6166C6D20013B25006024AD /* Assets.xcassets in Resources */,
 				D6166C7E20014FE9006024AD /* InitialViewController.xib in Resources */,
+				D6166CAB2001869A006024AD /* CViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,12 +286,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6166C9C20018605006024AD /* CCoordinator.swift in Sources */,
+				D6166CAF200186E0006024AD /* BViewModel.swift in Sources */,
+				D6166CA620018683006024AD /* BViewController.swift in Sources */,
+				D6166CAA2001869A006024AD /* CViewController.swift in Sources */,
 				D6166C7D20014FE9006024AD /* InitialViewController.swift in Sources */,
+				D6166C9120017232006024AD /* DrawerCoordinator.swift in Sources */,
+				D6166C98200185EF006024AD /* ACoordinator.swift in Sources */,
+				D6166CA220018673006024AD /* AViewController.swift in Sources */,
+				D6166C8F20016FD5006024AD /* DrawerViewModel.swift in Sources */,
+				D6166C9A200185F9006024AD /* BCoordinator.swift in Sources */,
 				D6166C852001639C006024AD /* InitialViewModel.swift in Sources */,
 				D6166C882001648F006024AD /* UIResponder+Extension.swift in Sources */,
+				D6166CB1200186ED006024AD /* AViewModel.swift in Sources */,
 				D6166C8320015C25006024AD /* InitialCoordinator.swift in Sources */,
 				D6166C7A20013EC4006024AD /* Coordinating.swift in Sources */,
+				D6166C8C20016FBE006024AD /* DrawerViewController.swift in Sources */,
 				D6166C6620013B25006024AD /* AppDelegate.swift in Sources */,
+				D6166C942001759D006024AD /* DrawerTransitionManager.swift in Sources */,
+				D6166CAD200186CC006024AD /* CViewModel.swift in Sources */,
+				D6166C96200184C1006024AD /* TransitionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
