@@ -6,4 +6,23 @@
 //  Copyright © 2018 Alexander Stolar. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning {
+    
+    var originFrame: CGRect!
+    
+    init(originFrame: CGRect) {
+        self.originFrame = originFrame
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 1.0
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+    }
+    
+    
+}

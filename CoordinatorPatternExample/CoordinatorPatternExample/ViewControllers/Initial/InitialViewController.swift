@@ -10,6 +10,9 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
+    @IBOutlet weak var cButton: UIButton!
+    @IBOutlet weak var bButton: UIButton!
+    @IBOutlet weak var aButton: UIButton!
     var viewModel: InitialViewModel!
     
     init(viewModel: InitialViewModel) {
@@ -23,7 +26,7 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

@@ -13,17 +13,28 @@ class DrawerCoordinator: Coordinating {
     var childCoordinators: [Coordinating] = []
     var parent: Coordinating?
     
+    let drawerTransitionManager: DrawerTransitionManager!
+    var drawer: DrawerViewController!
+    
     required init(parent: Coordinating?) {
         self.parent = parent
+        drawerTransitionManager = DrawerTransitionManager(originFrame: navigationController.view.frame)
     }
     
     func start() {
-        
+        drawer = DrawerViewController()
+        drawer.transitioningDelegate = drawerTransitionManager
+        present(viewController: drawer, completionHandler: nil)
+    }
+    
+    func stop() {
+        drawer.dismiss(animated: true)
     }
     
     init(parent: Coordinating?, navigationController: UINavigationController) {
         self.parent = parent
         self.navigationController = navigationController
+        drawerTransitionManager = DrawerTransitionManager(originFrame: navigationController.view.frame)
     }
     
     

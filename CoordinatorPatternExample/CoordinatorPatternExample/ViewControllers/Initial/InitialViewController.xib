@@ -13,6 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialViewController" customModule="CoordinatorPatternExample" customModuleProvider="target">
             <connections>
+                <outlet property="aButton" destination="xSe-nZ-YJ1" id="mRh-UA-fCb"/>
+                <outlet property="bButton" destination="YzZ-pX-PNo" id="GHt-Dh-iyi"/>
+                <outlet property="cButton" destination="d2j-N8-XVA" id="gf1-tz-cBJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
