@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class BViewModel {
+    
+    var flowDelegate: BCoordinator!
+    
+    init(flowDelegate: BCoordinator) {
+        self.flowDelegate = flowDelegate
+    }
+}

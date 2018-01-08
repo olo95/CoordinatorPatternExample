@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class AViewModel {
+    
+    var flowDelegate: ACoordinator!
+    
+    init(flowDelegate: ACoordinator) {
+        self.flowDelegate = flowDelegate
+    }
+}

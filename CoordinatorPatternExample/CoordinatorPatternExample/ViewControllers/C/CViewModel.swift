@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class CViewModel {
+    
+    var flowDelegate: CCoordinator!
+    
+    init(flowDelegate: CCoordinator) {
+        self.flowDelegate = flowDelegate
+    }
+}

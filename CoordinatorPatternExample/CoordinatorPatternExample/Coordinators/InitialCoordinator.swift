@@ -16,6 +16,12 @@ class InitialCoordinator: Coordinating {
     var childCoordinators: [Coordinating] = []
     var parent: Coordinating?
     
+    var window: UIWindow!
+    var initialViewController: InitialViewController {
+        let vm = InitialViewModel(flowDelegate: self)
+        return InitialViewController(viewModel: vm)
+    }
+    
     required init(parent: Coordinating?) {
         self.parent = parent
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -26,14 +32,4 @@ class InitialCoordinator: Coordinating {
     func start() {
         navigationController.viewControllers = [initialViewController]
     }
-    
-    var window: UIWindow!
-    
-    var initialViewController: InitialViewController {
-        let vm = InitialViewModel(flowDelegate: self)
-        return InitialViewController(viewModel: vm)
-    }
-    
-    
-    
 }

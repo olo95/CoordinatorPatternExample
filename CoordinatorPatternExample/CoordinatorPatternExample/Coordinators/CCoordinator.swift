@@ -6,4 +6,27 @@
 //  Copyright © 2018 Alexander Stolar. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class CCoordinator: Coordinating {
+    
+    var navigationController: UINavigationController = {
+        return UINavigationController()
+    }()
+    var childCoordinators: [Coordinating] = []
+    var parent: Coordinating?
+    
+    var bViewController: CViewController {
+        let vm = CViewModel(flowDelegate: self)
+        return CViewController(viewModel: vm)
+    }
+    
+    required init(parent: Coordinating?) {
+        self.parent = parent
+    }
+    
+    func start() {
+        navigationController.viewControllers = []
+    }
+}
+
