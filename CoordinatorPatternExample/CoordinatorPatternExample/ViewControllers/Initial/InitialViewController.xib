@@ -42,6 +42,7 @@
                     </subviews>
                 </stackView>
             </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vcu-Di-d4X" secondAttribute="trailing" id="DhO-l1-WzH"/>
                 <constraint firstItem="vcu-Di-d4X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ecu-b2-4fm"/>

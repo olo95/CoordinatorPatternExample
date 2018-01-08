@@ -33,3 +33,11 @@ class InitialCoordinator: Coordinating {
         navigationController.viewControllers = [initialViewController]
     }
 }
+
+extension InitialCoordinator: DrawerCoordinatorDelegate {
+    
+    func showDrawer() {
+        let drawerCoordinator = DrawerCoordinator(parent: self, navigationController: navigationController)
+        drawerCoordinator.start()
+    }
+}

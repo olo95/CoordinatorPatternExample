@@ -19,23 +19,29 @@ class DrawerTransitionManager: NSObject {
 
 extension DrawerTransitionManager: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1.0
+        return 0.5
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
+        if let _ = transitionContext.viewController(forKey: .to) as? DrawerViewController { // Drawer is appearing
+            show(using: transitionContext)
+        } else if let _ = transitionContext.viewController(forKey: .from) as? DrawerViewController { // Drawer is disappearing
+            hide(using: transitionContext)
+        }
+    }
+    
+    func show(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = transitionContext.viewController(forKey: .from),
-            let toVC = transitionContext.viewController(forKey: .to),
+            let toVC = transitionContext.viewController(forKey: .to) as? DrawerViewController,
             let snapshot = toVC.view.snapshotView(afterScreenUpdates: true)
             else {
                 return
         }
-        
+        let fromVCView = fromVC.view.snapshotView(afterScreenUpdates: true)!
         let containerView = transitionContext.containerView
         
-        toVC.view.frame = CGRect(x: toVC.view.frame.origin.x - 1/2 * toVC.view.frame.origin.x, y: toVC.view.frame.origin.y, width: toVC.view.frame.width, height: toVC.view.frame.height)
-        
-        snapshot.frame = CGRect(x: 0 - originFrame.origin.x, y: originFrame.origin.y, width: originFrame.width, height: originFrame.height)
+        snapshot.frame = CGRect(x: 0 - originFrame.width, y: originFrame.origin.y, width: originFrame.width, height: originFrame.height)
         snapshot.layer.masksToBounds = true
         
         containerView.addSubview(toVC.view)
@@ -46,14 +52,27 @@ extension DrawerTransitionManager: UIViewControllerAnimatedTransitioning {
         
         UIView.animate(withDuration: duration
             , animations: {
-                snapshot.frame = CGRect(x: snapshot.frame.origin.x + 1/2 * self.originFrame.origin.x, y: self.originFrame.origin.y, width: self.originFrame.width, height: self.originFrame.height)
+                snapshot.frame = toVC.view.frame
         }, completion: { _ in
             toVC.view.isHidden = false
+            toVC.backgroundView.addSubview(fromVCView)
             snapshot.removeFromSuperview()
-            fromVC.view.layer.transform = CATransform3DIdentity
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
+    }
+    
+    func hide(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? DrawerViewController,
+            let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
+                return
+        }
         
+        let duration = transitionDuration(using: transitionContext)
+        UIView.animate(withDuration: duration, animations: {
+            fromVC.drawerView.frame.origin.x -= fromVC.drawerView.frame.width
+        }, completion: { _ in
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        })
     }
 }
 

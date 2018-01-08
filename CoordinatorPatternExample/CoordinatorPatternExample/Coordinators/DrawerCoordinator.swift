@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DrawerCoordinatorDelegate {
+    func showDrawer()
+}
+
 class DrawerCoordinator: Coordinating {
     var navigationController: UINavigationController = UINavigationController()
     var childCoordinators: [Coordinating] = []
@@ -22,7 +26,7 @@ class DrawerCoordinator: Coordinating {
     }
     
     func start() {
-        drawer = DrawerViewController()
+        drawer = DrawerViewController(viewModel: DrawerViewModel(flowDelegate: self))
         drawer.transitioningDelegate = drawerTransitionManager
         present(viewController: drawer, completionHandler: nil)
     }
@@ -36,6 +40,4 @@ class DrawerCoordinator: Coordinating {
         self.navigationController = navigationController
         drawerTransitionManager = DrawerTransitionManager(originFrame: navigationController.view.frame)
     }
-    
-    
 }

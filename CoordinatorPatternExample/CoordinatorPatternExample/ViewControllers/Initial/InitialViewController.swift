@@ -26,12 +26,21 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        aButton.addTarget(self, action: #selector(showDrawer), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc
+    private func showDrawer() {
+        guard let flowDelegate = viewModel.flowDelegate as? DrawerCoordinatorDelegate else {
+            return
+        }
+        
+        flowDelegate.showDrawer()
     }
 }
