@@ -11,6 +11,7 @@ import UIKit
 protocol Coordinating: class {
     var navigationController: UINavigationController { get }
     var childCoordinators: [Coordinating] { get set }
+    var rootCoordinator: Coordinating { get }
     var parent: Coordinating? { get set }
     
     init(parent: Coordinating?)
@@ -25,6 +26,14 @@ protocol Coordinating: class {
 }
 
 extension Coordinating {
+    
+    var rootCoordinator: Coordinating {
+        if let parent = parent {
+            return parent.rootCoordinator
+        } else {
+            return self
+        }
+    }
     
     func addNew(coordinator: Coordinating, fromRoot: Bool, completionHandler: (() -> ())?) {
         if fromRoot {

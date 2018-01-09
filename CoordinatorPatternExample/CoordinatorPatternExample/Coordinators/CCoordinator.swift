@@ -30,3 +30,10 @@ class CCoordinator: Coordinating {
     }
 }
 
+extension CCoordinator: DrawerCoordinatorDelegate {
+    
+    func showDrawer() {
+        let drawerCoordinator = DrawerCoordinator(parent: self, navigationController: navigationController)
+        drawerCoordinator.start()
+    }
+}

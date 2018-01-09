@@ -23,12 +23,25 @@ class CViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupActions()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func setupActions() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(showDrawer))
+    }
+    
+    @objc
+    private func showDrawer() {
+        guard let flowDelegate = viewModel.flowDelegate as? DrawerCoordinatorDelegate else {
+            return
+        }
+        
+        flowDelegate.showDrawer()
     }
 }

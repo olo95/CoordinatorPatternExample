@@ -29,7 +29,7 @@ class DrawerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissDrawer)))
+        setupActions()
         // Do any additional setup after loading the view.
     }
 
@@ -38,8 +38,29 @@ class DrawerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func setupActions() {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissDrawer)))
+        cButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        bButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        aButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
     @objc
     func dismissDrawer() {
         viewModel.flowDelegate.stop()
+    }
+    
+    @objc
+    private func buttonTapped(sender: UIButton) {
+        switch sender {
+        case cButton:
+            viewModel.flowDelegate.drawerButtonTapped(with: .C)
+        case bButton:
+            viewModel.flowDelegate.drawerButtonTapped(with: .B)
+        case aButton:
+            viewModel.flowDelegate.drawerButtonTapped(with: .A)
+        default:
+            break
+        }
     }
 }

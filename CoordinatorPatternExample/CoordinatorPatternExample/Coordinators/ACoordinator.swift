@@ -28,6 +28,12 @@ class ACoordinator: Coordinating {
     func start() {
         navigationController.viewControllers = [aViewController]
     }
+}
+
+extension ACoordinator: DrawerCoordinatorDelegate {
     
-    
+    func showDrawer() {
+        let drawerCoordinator = DrawerCoordinator(parent: self, navigationController: navigationController)
+        drawerCoordinator.start()
+    }
 }

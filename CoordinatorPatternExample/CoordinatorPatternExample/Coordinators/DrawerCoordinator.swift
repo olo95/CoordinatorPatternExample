@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum DrawerChoice {
+    case A, B, C
+}
+
 protocol DrawerCoordinatorDelegate {
     func showDrawer()
 }
@@ -25,6 +29,12 @@ class DrawerCoordinator: Coordinating {
         drawerTransitionManager = DrawerTransitionManager(originFrame: navigationController.view.frame)
     }
     
+    init(parent: Coordinating?, navigationController: UINavigationController) {
+        self.parent = parent
+        self.navigationController = navigationController
+        drawerTransitionManager = DrawerTransitionManager(originFrame: navigationController.view.frame)
+    }
+    
     func start() {
         drawer = DrawerViewController(viewModel: DrawerViewModel(flowDelegate: self))
         drawer.transitioningDelegate = drawerTransitionManager
@@ -35,9 +45,14 @@ class DrawerCoordinator: Coordinating {
         drawer.dismiss(animated: true)
     }
     
-    init(parent: Coordinating?, navigationController: UINavigationController) {
-        self.parent = parent
-        self.navigationController = navigationController
-        drawerTransitionManager = DrawerTransitionManager(originFrame: navigationController.view.frame)
+    func drawerButtonTapped(with choice: DrawerChoice) {
+        switch choice {
+        case .A:
+            addNew(coordinator: ACoordinator(parent: rootCoordinator), fromRoot: true, completionHandler: nil)
+        case .B:
+            addNew(coordinator: ACoordinator(parent: rootCoordinator), fromRoot: true, completionHandler: nil)
+        case .C:
+            addNew(coordinator: ACoordinator(parent: rootCoordinator), fromRoot: true, completionHandler: nil)
+        }
     }
 }
