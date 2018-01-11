@@ -37,6 +37,10 @@ class InitialViewController: UIViewController {
     
     private func setupActions() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(showDrawer))
+        
+        aButton.addTarget(self, action: #selector(aButtonTapped), for: .touchUpInside)
+        bButton.addTarget(self, action: #selector(bButtonTapped), for: .touchUpInside)
+        cButton.addTarget(self, action: #selector(cButtonTapped), for: .touchUpInside)
     }
     
     @objc
@@ -46,5 +50,20 @@ class InitialViewController: UIViewController {
         }
         
         flowDelegate.showDrawer()
+    }
+    
+    @objc
+    private func aButtonTapped() {
+        viewModel.flowDelegate.takeToACoordinator()
+    }
+    
+    @objc
+    private func bButtonTapped() {
+        viewModel.flowDelegate.takeToBCoordinator()
+    }
+    
+    @objc
+    private func cButtonTapped() {
+        viewModel.flowDelegate.takeToCCoordinator()
     }
 }

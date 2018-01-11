@@ -33,6 +33,10 @@ class ACoordinator: Coordinating {
         navigationController.transitioningDelegate = transitionManager
         navigationController.viewControllers = [aViewController]
     }
+    
+    func takeToFCoordinator() {
+        addNew(coordinator: FCoordinator(parent: self), fromRoot: false, completionHandler: nil)
+    }
 }
 
 extension ACoordinator: DrawerCoordinatorDelegate {

@@ -31,5 +31,17 @@ class DCoordinator: Coordinating {
         navigationController.transitioningDelegate = transitionManager
         navigationController.viewControllers = [dViewController]
     }
+    
+    func takeToBCoordinator() {
+        addNew(coordinator: BCoordinator(parent: self), fromRoot: false, completionHandler: nil)
+    }
+}
+
+extension DCoordinator: DrawerCoordinatorDelegate {
+    
+    func showDrawer() {
+        let drawerCoordinator = DrawerCoordinator(parent: self, navigationController: navigationController)
+        drawerCoordinator.start()
+    }
 }
 

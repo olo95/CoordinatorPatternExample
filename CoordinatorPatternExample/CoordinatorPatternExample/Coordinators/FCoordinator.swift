@@ -32,3 +32,11 @@ class FCoordinator: Coordinating {
         navigationController.viewControllers = [fViewController]
     }
 }
+
+extension FCoordinator: DrawerCoordinatorDelegate {
+    
+    func showDrawer() {
+        let drawerCoordinator = DrawerCoordinator(parent: self, navigationController: navigationController)
+        drawerCoordinator.start()
+    }
+}

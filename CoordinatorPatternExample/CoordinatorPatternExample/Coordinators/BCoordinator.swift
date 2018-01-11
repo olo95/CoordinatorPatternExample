@@ -32,6 +32,14 @@ class BCoordinator: Coordinating {
         navigationController.transitioningDelegate = transitionManager
         navigationController.viewControllers = [bViewController]
     }
+    
+    func takeToFCoordinator() {
+        addNew(coordinator: FCoordinator(parent: self), fromRoot: false, completionHandler: nil)
+    }
+    
+    func takeToECoordinator() {
+        addNew(coordinator: ECoordinator(parent: self), fromRoot: false, completionHandler: nil)
+    }
 }
 
 extension BCoordinator: DrawerCoordinatorDelegate {

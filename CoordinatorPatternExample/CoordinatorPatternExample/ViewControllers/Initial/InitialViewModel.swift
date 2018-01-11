@@ -9,9 +9,9 @@
 import Foundation
 
 class InitialViewModel {
-    var flowDelegate: Coordinating!
+    var flowDelegate: InitialCoordinator!
     
-    init(flowDelegate: Coordinating) {
+    init(flowDelegate: InitialCoordinator) {
         self.flowDelegate = flowDelegate
     }
 }

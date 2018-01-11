@@ -32,6 +32,18 @@ class InitialCoordinator: Coordinating {
     func start() {
         navigationController.viewControllers = [initialViewController]
     }
+    
+    func takeToACoordinator() {
+        addNew(coordinator: ACoordinator(parent: self), fromRoot: false, completionHandler: nil)
+    }
+    
+    func takeToBCoordinator() {
+        addNew(coordinator: BCoordinator(parent: self), fromRoot: false, completionHandler: nil)
+    }
+    
+    func takeToCCoordinator() {
+        addNew(coordinator: CCoordinator(parent: self), fromRoot: false, completionHandler: nil)
+    }
 }
 
 extension InitialCoordinator: DrawerCoordinatorDelegate {

@@ -10,6 +10,7 @@ import UIKit
 
 class AViewController: UIViewController {
     
+    @IBOutlet weak var fButton: UIButton!
     var viewModel: AViewModel!
     
     init(viewModel: AViewModel) {
@@ -33,7 +34,10 @@ class AViewController: UIViewController {
     }
     
     private func setupActions() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(showDrawer))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(showDrawer))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(dismissView))
+        
+        fButton.addTarget(self, action: #selector(fButtonTapped), for: .touchUpInside)
     }
     
     @objc
@@ -43,5 +47,15 @@ class AViewController: UIViewController {
         }
         
         flowDelegate.showDrawer()
+    }
+    
+    @objc
+    private func dismissView() {
+        viewModel.flowDelegate.dismiss(viewController: navigationController!, completionHandler: nil)
+    }
+    
+    @objc
+    private func fButtonTapped() {
+        viewModel.flowDelegate.takeToFCoordinator()
     }
 }

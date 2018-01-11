@@ -51,6 +51,12 @@ extension Coordinating {
                     completionHandler?()
                 }
             }
+        } else {
+            self.childCoordinators.append(coordinator)
+            coordinator.start()
+            present(viewController: coordinator.navigationController) {
+                completionHandler?()
+            }
         }
     }
     
