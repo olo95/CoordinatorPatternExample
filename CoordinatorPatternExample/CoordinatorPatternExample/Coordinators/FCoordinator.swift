@@ -1,26 +1,25 @@
 //
-//  BCoordinator.swift
+//  FCoordinator.swift
 //  CoordinatorPatternExample
 //
-//  Created by Alexander Stolar on 06.01.2018.
+//  Created by Alexander Stolar on 11.01.2018.
 //  Copyright © 2018 Alexander Stolar. All rights reserved.
 //
 
 import UIKit
 
-class BCoordinator: Coordinating {
-    
+class FCoordinator: Coordinating {
     var navigationController: UINavigationController = {
-       return UINavigationController()
+        return UINavigationController()
     }()
     var childCoordinators: [Coordinating] = []
     var parent: Coordinating?
     
     var transitionManager: TransitionManager!
     
-    var bViewController: BViewController {
-        let vm = BViewModel(flowDelegate: self)
-        return BViewController(viewModel: vm)
+    var fViewController: FViewController {
+        let vm = FViewModel(flowDelegate: self)
+        return FViewController(viewModel: vm)
     }
     
     required init(parent: Coordinating?) {
@@ -30,14 +29,6 @@ class BCoordinator: Coordinating {
     
     func start() {
         navigationController.transitioningDelegate = transitionManager
-        navigationController.viewControllers = [bViewController]
-    }
-}
-
-extension BCoordinator: DrawerCoordinatorDelegate {
-    
-    func showDrawer() {
-        let drawerCoordinator = DrawerCoordinator(parent: self, navigationController: navigationController)
-        drawerCoordinator.start()
+        navigationController.viewControllers = [fViewController]
     }
 }

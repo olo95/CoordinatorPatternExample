@@ -16,6 +16,8 @@ class ACoordinator: Coordinating {
     var childCoordinators: [Coordinating] = []
     var parent: Coordinating?
     
+    let transitionManager: TransitionManager!
+    
     var aViewController: AViewController {
         let vm = AViewModel(flowDelegate: self)
         return AViewController(viewModel: vm)
@@ -23,9 +25,12 @@ class ACoordinator: Coordinating {
     
     required init(parent: Coordinating?) {
         self.parent = parent
+        transitionManager = TransitionManager(originFrame: navigationController.view.frame)
     }
     
     func start() {
+        let aViewController = self.aViewController
+        navigationController.transitioningDelegate = transitionManager
         navigationController.viewControllers = [aViewController]
     }
 }
