@@ -39,7 +39,7 @@ extension Coordinating {
         if fromRoot {
             if let parent = parent {
                 self.childCoordinators.removeAll()
-                navigationController.dismiss(animated: true) {
+                navigationController.dismiss(animated: false) {
                     parent.addNew(coordinator: coordinator, fromRoot: fromRoot) {
                         completionHandler?()
                     }
